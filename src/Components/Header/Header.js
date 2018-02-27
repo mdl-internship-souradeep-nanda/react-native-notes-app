@@ -1,14 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Header.css';
+
+import { View, Text } from 'react-native';
+
+// import './Header.css';
 
 function Header(props) {
   return (
-    <div className="Header-header">
-      <strong className="Header-center-span">
+    <View className="Header-header">
+      <Text className="Header-center-span">
         {props.title}
-      </strong>
-    </div>
+      </Text>
+    </View>
   );
 }
 
