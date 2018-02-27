@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Footer.css';
+// import './Footer.css';
+
+import { Button, View } from 'react-native';
 
 function Footer(props) {
   return (
-    <div className="Footer-footer">
-      <strong className="Footer-center-span">
-        <button className="Footer-button" onClick={props.callback}>
-          {props.title}
-        </button>
-      </strong>
-    </div>
+    <View className="Footer-footer">
+      <Button className="Footer-button" onPress={props.callback} title={props.title} />
+    </View>
   );
 }
 
