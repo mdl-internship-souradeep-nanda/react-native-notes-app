@@ -1,0 +1,28 @@
+{
+  "PAGE_KEYS": {
+    "HOME_PAGE": "home_page",
+    "SAVED_NOTES_PAGE": "saved_notes_page"
+  },
+  "english": {
+    "header_title": {
+      "home_page": "Start taking notes",
+      "saved_notes_page": "Saved notes"
+    },
+    "footer_title": {
+      "home_page": "About us",
+      "saved_notes_page": "Create new note"
+    },
+    "note_title": "Note title",
+    "title_placeholder": "Tasks for today",
+    "current_language": "en",
+    "body_header": "Please type your note below",
+    "body_notes_placeholder": [
+      "Understand how react native works",
+      "Build a native android or ios app",
+      "Setup CI for automated tools",
+      "Conventions to manage code base"
+    ],
+    "save_button_text": "Save",
+    "characters_label_text": "characters"
+  }
+}

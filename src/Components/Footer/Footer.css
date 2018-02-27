@@ -1,0 +1,17 @@
+.Footer-footer{
+  flex:1;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+}
+
+.Footer-center-span{
+  flex:1;
+}
+
+.Footer-button{
+  height: 50px;
+  border: 0px;
+  background: #fff;
+}

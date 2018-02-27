@@ -1,0 +1,21 @@
+.App-wrapper{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-title-container{
+  flex:3;
+  display: flex;
+}
+
+.App-body-container{
+  flex:8;
+  display: flex;
+}
+
+
+.App-notes-container{
+  flex:11;
+  overflow: scroll;
+}
