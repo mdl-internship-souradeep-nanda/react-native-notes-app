@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './BodySection.css';
+
+import { View, TextInput, Button, Text, Image } from 'react-native';
+
+// import './BodySection.css';
 
 import clipboard from './clipboard.svg';
 
@@ -15,6 +18,7 @@ class BodySection extends React.Component {
 
     // Maximum allowed text length
     this.MAX_LENGTH = 10;
+    this.nodeBody = '';
   }
 
   componentDidMount() {
@@ -37,8 +41,8 @@ class BodySection extends React.Component {
   /**
    * This function is called when text is updated
    */
-  onTextChange = () => {
-    this.nodeBody = this.textAreaHandle.value;
+  onTextChange = (newText) => {
+    if (newText !== undefined) { this.nodeBody = newText; }
     const count = this.nodeBody.length;
 
     // Change color based on text length
@@ -54,13 +58,19 @@ class BodySection extends React.Component {
     const characterCountStyle = `BodySection-character-count ${this.state.charStyle}`;
     const bodyTextStyle = `BodySection-text-body ${this.state.charStyle}`;
     return (
-      <div className="BodySection-wrapper">
-        <div className="BodySection-header-wrapper">
-          <i className="BodySection-header-text">{this.props.bodyHeader}</i>
-          <img className="BodySection-clipboard-img" src={clipboard} alt="clipboard" />
-        </div>
-        <div className="BodySection-text-wrapper">
-          <textarea
+      <View className="BodySection-wrapper">
+        <View className="BodySection-header-wrapper">
+          <Text className="BodySection-header-text">
+            {this.props.bodyHeader}
+          </Text>
+          <Image
+            className="BodySection-clipboard-img"
+            source={clipboard}
+            alt="clipboard"
+          />
+        </View>
+        <View className="BodySection-text-wrapper">
+          <TextInput
             ref={(textAreaHandle) => { this.textAreaHandle = textAreaHandle; }}
             type="text"
             className={bodyTextStyle}
@@ -71,14 +81,20 @@ class BodySection extends React.Component {
             maxLength={this.MAX_LENGTH}
             value={this.state.content}
           />
-        </div>
-        <div className="BodySection-body-footer">
-          <div className="BodySection-save-button-wrapper">
-            <button onClick={this.onSaveButton} className="BodySection-save-button" >{this.props.saveButtonText}</button>
-          </div>
-          <div className={characterCountStyle}>{charString}</div>
-        </div>
-      </div>
+        </View>
+        <View className="BodySection-body-footer">
+          <View className="BodySection-save-button-wrapper">
+            <Button
+              onPress={this.onSaveButton}
+              className="BodySection-save-button"
+              title={this.props.saveButtonText}
+            />
+          </View>
+          <View className={characterCountStyle}>
+            <Text>{charString}</Text>
+          </View>
+        </View>
+      </View>
     );
   }
 }
