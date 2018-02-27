@@ -1,21 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './SavedNote.css';
+// import './SavedNote.css';
+
+import { View, Text, Button } from 'react-native';
 
 function SavedNote(props) {
   return (
-    <div
+    <View
       className="SavedNote-wrapper"
-      onClick={props.onClick}
-      onKeyPress={props.onClick}
-      role="button"
-      tabIndex={0}
     >
-      <div className="SavedNote-title">{props.title}</div>
-      <div className="SavedNote-body">
-        <pre className="SavedNote-pre">{props.body}</pre>
-      </div>
-    </div>
+      <View className="SavedNote-title">
+        <Text>{props.title}</Text>
+      </View>
+      <View className="SavedNote-body">
+        <Text className="SavedNote-pre">{props.body}</Text>
+      </View>
+      <Button
+        onPress={props.onClick}
+        title="EDIT"
+      />
+    </View>
   );
 }
 
