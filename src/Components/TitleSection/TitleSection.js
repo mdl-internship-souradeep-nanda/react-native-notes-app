@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import './TitleSection.css';
 
+import { View, Button, TextInput, Text } from 'react-native';
+
 class TitleSection extends React.Component {
   constructor(props) {
     super(props);
@@ -24,20 +26,19 @@ class TitleSection extends React.Component {
 
   render() {
     return (
-      <div className="TitleSection-wrapper">
-        <div className="TitleSection-title-bar">
-          <div className="TitleSection-title">
+      <View className="TitleSection-wrapper">
+        <View className="TitleSection-title-bar">
+          <Text className="TitleSection-title">
             {this.props.noteTitle}
-          </div>
-          <button
+          </Text>
+          <Button
             className="TitleSection-language-button"
-            onClick={this.props.onLanguageButtonClick}
-          >
-            {this.props.currentLanguage}
-          </button>
-        </div>
-        <div className="TitleSection-input-wrapper">
-          <input
+            onPress={this.props.onLanguageButtonClick}
+            title={this.props.currentLanguage}
+          />
+        </View>
+        <View className="TitleSection-input-wrapper">
+          <TextInput
             ref={(titleField) => { this.titleField = titleField; }}
             className="TitleSection-note-title"
             type="text"
@@ -45,8 +46,8 @@ class TitleSection extends React.Component {
             value={this.state.content}
             onChange={this.handleChange}
           />
-        </div>
-      </div>
+        </View>
+      </View>
     );
   }
 }
